@@ -1,0 +1,137 @@
+.card {
+  border: 1px outset #ffffc9;
+  border-radius: 10px;
+  width: 300px;
+  height: 470px;
+  margin: auto;
+  -webkit-box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.49);
+  -moz-box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.49);
+  box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.49);
+  background: #121212;
+  float: left;
+  margin-left: 10px;
+  margin-top: 15px;
+}
+
+.cards {
+  display: flow-root;
+}
+
+.card-content {
+  padding: 10px;
+  background: #222;
+  margin: 15px 16px;
+}
+
+.card, .card-content {
+  border-radius: 10px;
+  text-align: left;
+}
+
+.card img {
+  display: block;
+  margin: 20px auto;
+  border-radius: 2px;
+  border: solid 1px #444;
+}
+
+.card-name {
+  background: #494949;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.card p span {
+  margin: 0 10px;
+}
+
+.options {
+  padding: 10px;
+  margin: auto;
+}
+
+/* style for checkbox */
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: #eee;
+}
+
+.container:hover input~.checkmark {
+  background-color: #ccc;
+}
+
+.container input:checked~.checkmark {
+  background-color: #494949;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked~.checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  left: 6px;
+  top: 3px;
+  width: 3px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* style for edit button */
+
+.button {
+  border: 1px outset #ffffc9;
+  border-radius: 10px;
+  -webkit-box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.49);
+  -moz-box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.49);
+  box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.49);
+  background-color: #121212;
+  color: white;
+  font-size: 16px;
+  bottom: 10px;
+  margin: 0 110px;
+}
+
+input[type=text] {
+  background: #494949;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+}
+
+select {
+  background: #494949;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  text-align: center;
+}
