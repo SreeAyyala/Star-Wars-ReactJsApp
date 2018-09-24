@@ -23,7 +23,27 @@ export const saveData = ({id, name, birth_year, homeworld}) => {
     name,
     birth_year,
     homeworld
+
   }
   return axios({method: 'patch', data, url, mode: 'cors', responseType: 'json'})
-
 }
+
+export const markFav = ({checked, id, name, birth_year, homeworld}) => {
+  const url = `http://localhost:3008/peoplefavorites`
+  let data = {
+    name,
+    birth_year,
+    homeworld
+
+  }
+  return axios({method: 'post', data, url, mode: 'cors', responseType: 'json'})
+}
+
+export const getFavData = () => {
+  const url = `http://localhost:3008/peoplefavorites`
+  return axios({method: 'get', url, mode: 'cors', responseType: 'json'})
+}
+// export const deleteFav = ({}) => {
+//   const url = `http://localhost:3008/peoplefavourites`
+//   return axios({method: 'delete', url, mode: 'cors', responseType: 'json'})
+// }

@@ -16,7 +16,6 @@
   left: -2em;
   letter-spacing: 0.4em;
   right: -2em;
-  ;
   text-transform: uppercase;
   top: 29%;
 }
@@ -29,7 +28,7 @@
 #react-paginate li {
   display: inline-block;
   padding: 5px;
-  cursor:context-menu;
+  cursor: context-menu;
 }
 
 .previousClassName {
@@ -58,11 +57,11 @@
   padding: 5px;
 }
 
-.disabledClassName{
-color:grey;
+.disabledClassName {
+  color: grey;
 }
 
-.pageLinkClassName{
+.pageLinkClassName {
   border: 1px outset #ffffc9;
   border-radius: 10px;
   -webkit-box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.49);
@@ -75,6 +74,19 @@ color:grey;
   padding: 5px;
 }
 
-.breakClassName{
-  color:white;
+.breakClassName {
+  color: white;
+}
+
+.favourites-btn {
+  border: 1px outset #ffffc9;
+  border-radius: 10px;
+  -webkit-box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.49);
+  -moz-box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.49);
+  box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.49);
+  background-color: #121212;
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+  folat: right;
 }

@@ -52,7 +52,6 @@
 }
 
 /* style for checkbox */
-
 .container {
   display: block;
   position: relative;
@@ -107,7 +106,6 @@
 }
 
 /* style for edit button */
-
 .button {
   border: 1px outset #ffffc9;
   border-radius: 10px;
@@ -119,6 +117,7 @@
   font-size: 16px;
   bottom: 10px;
   margin: 0 110px;
+  padding: 6px;
 }
 
 input[type=text] {

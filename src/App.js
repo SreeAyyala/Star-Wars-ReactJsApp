@@ -23,10 +23,7 @@ class App extends Component {
     // getData(data).then((response) => this.setState({people: response.data})).catch((error) => console.error("Error: ", error))
     const {limit, page} = this.state
     paginateData({page, limit}).then((response) => {
-      this.setState({
-        people: response.data,
-        totalCount: response.headers['x-total-count']
-      })
+      this.setState({people: response.data, totalCount: response.headers['x-total-count']})
     }).catch((error) => console.error("Error: ", error))
   }
 
@@ -34,7 +31,7 @@ class App extends Component {
     const {search, limit, page} = this.state
     if (prevState.search !== search || prevState.page !== page) {
       if (!!search) {
-        searchData({search, page, limit}).then((response) => this.setState({people: response.data,totalCount: response.headers['x-total-count']})).catch((error) => console.error("Error: ", error))
+        searchData({search, page, limit}).then((response) => this.setState({people: response.data, totalCount: response.headers['x-total-count']})).catch((error) => console.error("Error: ", error))
       } else {
         paginateData({page, limit}).then((response) => this.setState({people: response.data, totalCount: response.headers['x-total-count']})).catch((error) => console.error("Error: ", error))
       }
@@ -61,15 +58,20 @@ class App extends Component {
         <span className='interview-text'>The Interview</span>
         <img src={wars} alt="wars-logo"/>
       </div>
-      <SearchBar setSearch={(search) => this.setSearch(search)}/>
+      <div>
+        <SearchBar setSearch={(search) => this.setSearch(search)}/>
+        <button type="button" className="favourites-btn">Show-Favourites</button>
+      </div>
+
       <div className="cards">
-        {(people && people.length) ? people.map((data) => <Card key={data.id} item={data}/>)
-        : <div>Nothing to display</div>}
+        {
+          (people && people.length)
+            ? people.map((data) => <Card key={data.id} item={data}/>)
+            : <div>Nothing to display</div>
+        }
       </div>
       <div id="react-paginate">
-        <ReactPaginate previousLabel={"<Previous"} nextLabel={"Next>"} breakLabel={<a href="" > ...</a>} breakClassName={"breakClassName"} pageCount={pageCount} pageRangeDisplayed={1} marginRangeDisplayed={1} onPageChange={this.handlePageClick} containerClassName={"pagination"} subContainerClassName={"pages pagination"} activeClassName={"active"}
-        previousClassName={"previousClassName"}
-        nextClassName={"nextClassName"} disabledClassName={"disabledClassName"} pageLinkClassName={"pageLinkClassName"}/>
+        <ReactPaginate previousLabel={"<Previous"} nextLabel={"Next>"} breakLabel={<a href = "" > ...</a>} breakClassName={"breakClassName"} pageCount={pageCount} pageRangeDisplayed={1} marginRangeDisplayed={1} onPageChange={this.handlePageClick} containerClassName={"pagination"} subContainerClassName={"pages pagination"} activeClassName={"active"} previousClassName={"previousClassName"} nextClassName={"nextClassName"} disabledClassName={"disabledClassName"} pageLinkClassName={"pageLinkClassName"}/>
       </div>
 
     </div>);
