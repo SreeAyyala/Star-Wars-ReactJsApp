@@ -1,5 +1,9 @@
-import React, {Component} from 'react';
-import {getData} from './Data.js'
+import React, {
+  Component
+} from 'react';
+import {
+  getData
+} from './Data.js'
 
 class SelectPlanet extends Component {
   state = {
@@ -11,25 +15,47 @@ class SelectPlanet extends Component {
     let data = {
       path: `planets`
     }
-    getData(data).then((response) => this.setState({planets: response.data})).catch((error) => console.error("Error: ", error))
+    getData(data).then((response) => this.setState({
+      planets: response.data
+    })).catch((error) => console.error("Error: ", error))
   }
 
   handleOnChange = (event) => {
     const selected = JSON.parse(event.target.value)
-    this.setState({current: event.target.value})
+    this.setState({
+      current: event.target.value
+    })
     this.props.editHomeWorld(selected)
   }
 
   render() {
-    const {planets, current} = this.state
-    return (<select name="planets" onChange={this.handleOnChange} value={current}>
-      {
-        planets.map((planet) => {
-          const value = JSON.stringify({id: planet.id, name: planet.name})
-          return (<option key={planet.id} value={value}>{planet.name}</option>)
-        })
+      const {
+        planets,
+        current
+      } = this.state
+      return ( < select name = "planets"
+        onChange = {
+          this.handleOnChange
+        }
+        value = {
+          current
+        } > {
+          planets.map((planet) => {
+              const value = JSON.stringify({
+                id: planet.id,
+                name: planet.name
+              })
+              return ( < option key = {
+                  planet.id
+                }
+                value = {
+                  value
+                } > {
+                  planet.name
+                } < /option>)
+              })
+          } <
+          /select>)
+        }
       }
-    </select>)
-  }
-}
-export default SelectPlanet;
+      export default SelectPlanet;

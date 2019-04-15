@@ -23,7 +23,8 @@
   margin: 15px 16px;
 }
 
-.card, .card-content {
+.card,
+.card-content {
   border-radius: 10px;
   text-align: left;
 }
