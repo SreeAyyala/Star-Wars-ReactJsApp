@@ -4,7 +4,7 @@
   "private": true,
   "devDependencies": {
     "concurrently": "^3.1.0",
-    "react-scripts": "0.7.0",
+    "react-scripts": "^3.0.0",
     "swapi-json-server": "git+https://github.com/joltup/swapi-json-server.git"
   },
   "dependencies": {
